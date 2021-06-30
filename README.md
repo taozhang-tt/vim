@@ -122,6 +122,11 @@ Plug 'preservim/nerdtree'
 ## go 插件 vim-go
 
 ### 安装
+```
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+```
+执行`:PlugInstall`
+执行`:GoInstallBinaries`
 
 ### 使用
 * 格式化代码：`:GoFmt`
