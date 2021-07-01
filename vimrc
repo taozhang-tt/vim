@@ -35,6 +35,11 @@ set pastetoggle=<F9>
 " 设置光标所在的行列高亮
 set cursorline
 set cursorcolumn
+" 代码折叠, zm: 折叠全部, zr: 展开全部, za: 当前位置展开|折叠
+set foldmethod=indent  " 设置实用语法方式折叠
+set foldnestmax=2   " 设置最大折叠深度
+set foldlevelstart=1 " 设置起始折叠深度
+nnoremap <space> za
 
 " 插件安装
 call plug#begin('~/.vim/plugged')
@@ -83,7 +88,6 @@ map <F5> :Leaderf rg<CR>
 map <F4> :Leaderf rg --current-buffer<CR>
 " 三石配置的一个搜索快捷键，并且屏蔽了vendor目录
 set wildignore+=**/vendor/**
-" nnoremap <space> za
 " nnoremap <silent> <leader>f :vimgrep/<C-R><C-W>/**/*.go <CR> :cw <CR>
 " 模仿三石的写法，自定义的搜索快捷键
 " 输入 \fw，在当前文件搜索光标下的单词
@@ -117,6 +121,7 @@ nnoremap <S-L> <C-W>l
 "==============================================================================
 " Markdown 相关
 "==============================================================================
+
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Microsoft Edge'
 let vim_markdown_preview_hotkey='<C-m>'
